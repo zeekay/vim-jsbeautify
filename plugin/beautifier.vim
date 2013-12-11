@@ -266,7 +266,7 @@ function! s:getCursorPosition(numberOfNonBlankCharactersFromTheStartOfFile)
         let nonBlankCount = nonBlankCount + 1
       endif
       let charIndex = charIndex + 1
-      if nonBlankCount == a:numberOfNonBlankCharactersFromTheStartOfFile 
+      if nonBlankCount == a:numberOfNonBlankCharactersFromTheStartOfFile
         "echo 'found position!'
         return {'line': lineNumber,'column': charIndex}
       end
@@ -287,7 +287,7 @@ endfunction
 
 
 function! s:getCursorAndMarksPositions()
-  let localMarks = map(range(char2nr('a'), char2nr('z'))," \"'\".nr2char(v:val) ") 
+  let localMarks = map(range(char2nr('a'), char2nr('z'))," \"'\".nr2char(v:val) ")
   let marks = ['.'] + localMarks
   let result = {}
   for positionType in marks
@@ -482,7 +482,7 @@ endt
 "XXX: legacy block code
 "yet retain support old config
 fun! LegacyMsg()
-  call WarningMsg('beautifier.vim#Please use .editorconfig for default settings')
+  " call WarningMsg('beautifier.vim#Please use .editorconfig for default settings')
 endfun
 
 if exists('g:jsbeautify')
